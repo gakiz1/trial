@@ -1,0 +1,33 @@
+<head>
+<link href="mapfont.css" rel="stylesheet" type="text/css"/>
+</head>
+<body bgcolor="#00FFFF">
+<div id="heading">
+<h2> Walmart Weather Assistant</h2>
+</div>
+<div id ="trip">
+<h2> Enter the trip number </h2><input type="text" name="trip" value="">
+ <input type="submit" value="Submit" onclick=callBackend()>
+ </div>
+</body>
+<script>
+function callBackend(){
+ var saresh ={};
+ saresh.origin={};
+  saresh.destination={};
+   saresh.destination.latitude = "34.066312665124634";  
+ saresh.destination.longitude=" -118.12122387499994";
+ saresh.origin.latitude = "41.881832";
+ saresh.origin.longitude="-87.623177";
+ saresh.waypoints = new Array();
+  saresh.waypoints[0]={};
+  saresh.waypoints[1]={};
+  saresh.waypoints[0].latitude = "36.92793967365251"; 
+ saresh.waypoints[0].longitude="-94.47864574999994";
+  saresh.waypoints[1].latitude = "35.50987242663404"; 
+ saresh.waypoints[1].longitude="-97.55481762499994";
+	window.localStorage.setItem("triproute",JSON.stringify(saresh));
+	console.log(saresh);
+ window.location.href = "map.html";
+}
+</script>
